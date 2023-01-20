@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
 import { Activity } from "../models/activity";
 import { router } from "../router/Routes";
 import { store } from "../stores/store";
@@ -24,10 +24,10 @@ axios.interceptors.response.use(async response => {
                 router.navigate('/not-found');
             }
             if (data.errors) {
-                const modalStateErrors = [];
+                const modalStateErrors = Array();
                 for (const key in data.errors) {
                     if (data.errors[key]) {
-                        modalStateErrors.push(data.errors[key])
+                        modalStateErrors.push(data.errors[key]);
                     }
                 }
                 throw modalStateErrors.flat();
