@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { toast } from 'react-toastify';
 import { Activity } from "../models/activity";
@@ -32,7 +33,7 @@ axios.interceptors.response.use(async response => {
                 router.navigate('/not-found');
             }
             if (data.errors) {
-                const modalStateErrors = Array();
+                const modalStateErrors = Array([]);
                 for (const key in data.errors) {
                     if (data.errors[key]) {
                         modalStateErrors.push(data.errors[key]);
