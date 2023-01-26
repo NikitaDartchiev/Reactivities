@@ -22,17 +22,17 @@ export default observer( function ActivityDetails() {
 
     if (loadingInitial || !activity) return<LoadingComponents />;
 
-    return(
+
+    return (
         <Grid>
-            <Grid.Column width={10}>
+            <Grid.Column width='10'>
                 <ActivityDetailedHeader activity={activity} />
-                <ActivityDetailedInfo activity={activity}/>
-                <ActivityDetailedChat />
+                <ActivityDetailedInfo activity={activity} />
+                <ActivityDetailedChat/>
             </Grid.Column>
-            <Grid.Column width={6}>
-                <ActivityDetailedSideBar/>
+            <Grid.Column width='6'>
+                <ActivityDetailedSideBar activity={activity}/>
             </Grid.Column>
         </Grid>
     )
-}
-)
+})
